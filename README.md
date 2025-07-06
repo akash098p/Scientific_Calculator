@@ -3,6 +3,7 @@ A modern, interactive, and powerful Scientific Calculator built with HTML, CSS, 
 
 # 🚀 Features
  ✅ Dual Modes:
+ 
       • Simple Mode – for basic arithmetic operations
       • Scientific Mode – includes trigonometric, logarithmic, exponential, factorial, roots, powers, and constants like π and e
 
