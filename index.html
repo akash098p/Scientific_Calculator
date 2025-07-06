@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-wrapper"> 
+        <div class="calculator">
+            <input type="text" id="display" class="calculator-display" value="" readonly>
+
+            <div class="history-button-container">
+                <button id="historyBtn" class="history-button">HISTORY</button>
+            </div>
+
+            <div class="buttons-container" id="buttonsContainer">
+            </div>
+        </div>
+
+        <div id="historyPanel" class="history-panel hidden">
+            <button id="backBtn" class="back-button">« Back »</button>
+            <textarea id="historyText" class="history-text" readonly></textarea>
+            <button id="clearHistoryBtn" class="clear-history-button">Clear History</button>
+            <div class="footer-label">мα∂є вy αкαsн【ツ】</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

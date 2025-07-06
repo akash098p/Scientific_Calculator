@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1e1e1e; /* Root background */
+    margin: 0;
+    /* overflow: hidden; Removed to allow wrapper to handle overflow if needed, though not strictly necessary here */
+}
+
+/* New wrapper to contain both calculator and history panel */
+.calculator-wrapper {
+    position: relative; /* Crucial for positioning history panel relative to this */
+    display: flex; /* Helps in centering the calculator */
+    justify-content: center;
+    align-items: center;
+    /* max-width will adapt based on the content (simple vs scientific) */
+    max-width: fit-content; 
+    transition: max-width 0.3s ease-in-out; /* Smooth transition for width change */
+    padding: 10px; /* Optional: Add some padding around the calculator if desired */
+    box-sizing: border-box;
+}
+
+
+.calculator {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Remove fixed width: width: 350px; */ 
+    width: 100%; /* Take full width of its parent (calculator-wrapper) */
+    max-width: 350px; /* Default max-width for simple mode, will be adjusted by JS for scientific */
+}
+
+/* Add a class for scientific mode width */
+.calculator.scientific-mode {
+    max-width: 500px; /* Example width for scientific mode, adjust as needed */
+}
+
+.calculator-display {
+    width: calc(100% - 20px); /* Adjust for padding */
+    height: 60px;
+    background-color: #2e2e2e;
+    color: white;
+    font-size: 2em;
+    border: 5px ridge #2e2e2e; /* Border from Tkinter RIDGE */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    text-align: right;
+    box-sizing: border-box; /* Include padding in width */
+    caret-color: white; /* Blinking cursor color */
+}
+
+.history-button-container {
+    background-color: yellow; /* Yellow border effect */
+    padding: 2px; /* Simulates padx/pady around the button */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.history-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.history-button:active {
+    background-color: #7C7874; /* activebackground */
+}
+
+.buttons-container {
+    display: grid;
+    gap: 8px; /* Simulates padx/pady between buttons */
+}
+
+/* Button Styling (rest of your button styles remain the same) */
+.calculator-button {
+    padding: 18px 14px; /* Simulates padx/pady */
+    font-size: 1em;
+    border-radius: 5px;
+    border: 5px outset #2e2e2e; /* Simulates Tkinter RAISED relief */
+    background-color: #2e2e2e;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    box-sizing: border-box;
+    display: flex; /* For centering text */
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-button:active {
+    background-color: #3a3a3a !important; /* activebackground */
+    border-style: inset; /* Simulate SUNKEN relief */
+}
+
+/* Specific button colors and fonts (continue as is) */
+.button-ac, .button-backspace {
+    background-color: #A0522D;
+    font-size: 1.2em;
+}
+
+.button-ac:active {
+    color: red !important; /* activeforeground */
+}
+
+.button-equal {
+    background-color: #0DB431;
+    font-size: 1.2em;
+}
+
+.button-equal:active {
+    background-color: #009f20 !important;
+}
+
+.button-toggle-mode {
+    background-color: #3a8fb7;
+    font-size: 1.2em;
+}
+
+.button-operator-math {
+    color: yellow;
+}
+
+.button-function-math {
+    color: #7ec850;
+}
+
+.button-bracket {
+    color: #d19a66;
+}
+
+.button-number {
+    font-size: 1.1em;
+}
+
+.button-number:active, .button-dot:active {
+    color: #00bfff !important; /* activeforeground for numbers and dot */
+}
+
+/* Deg/Rad specific styling */
+.deg-rad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2e2e;
+    border: 5px outset #2e2e2e;
+    border-radius: 5px;
+    color: white;
+}
+
+.mode-label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.deg-rad-button {
+    font-size: 1.1em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0; /* Override default button padding */
+    flex-grow: 1; /* Allow button to take available space */
+}
+
+/* History Panel - Adjustments */
+.history-panel {
+    position: absolute; /* Positioned relative to .calculator-wrapper */
+    top: 0;
+    left: 0;
+    width: 100%; /* Takes 100% width of its parent .calculator-wrapper */
+    height: 100%; /* Takes 100% height of its parent .calculator-wrapper */
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure it's on top */
+    border-radius: 10px; /* Match calculator's border-radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Match calculator's shadow */
+}
+
+.history-panel.hidden {
+    display: none;
+}
+
+.back-button {
+    padding: 10px;
+    font-size: 1.1em;
+    background-color: #1e1e1e;
+    color: #d7ce20;
+    border: 6px solid white; /* highlightbackground and thickness */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.history-text {
+    flex-grow: 1;
+    background-color: #2e2e2e;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    padding: 10px;
+    resize: none; /* Disable textarea resizing */
+    margin-bottom: 10px;
+}
+
+.clear-history-button {
+    padding: 10px;
+    width: 200px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: red;
+    background-color: #BDE999;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    align-self: center; /* Center the button */
+}
+
+.clear-history-button:active {
+    background-color: #BDE999; /* activebackground */
+}
+
+.footer-label {
+    text-align: center;
+    font-size: 0.9em;
+    color: gray;
+}
