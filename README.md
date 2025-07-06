@@ -4,22 +4,29 @@ A modern, interactive, and powerful Scientific Calculator built with HTML, CSS, 
 # 🚀 Features
  ✅ Dual Modes:
  
-      • Simple Mode – for basic arithmetic operations
-      • Scientific Mode – includes trigonometric, logarithmic, exponential, factorial, roots, powers, and constants like π and e
+   • Simple Mode – for basic arithmetic operations
+   
+   • Scientific Mode – includes trigonometric, logarithmic, exponential, factorial, roots, powers, and constants like π and e
 
  ✅ Mode Switching:
-      • Toggle between Degrees and Radians for trigonometric functions.
+     
+   • Toggle between Degrees and Radians for trigonometric functions.
 
  ✅ History Panel:
-      • Displays up to the last 100 calculations.
-      • Option to clear or go back to the calculator interface.
+ 
+   • Displays up to the last 100 calculations.
+      
+   • Option to clear or go back to the calculator interface.
 
  ✅ Responsive UI:
-      • Fully responsive layout.
-      • Emulates Tkinter GUI-style button reliefs (RIDGE, RAISED, SUNKEN).
+ 
+   • Fully responsive layout.
+   
+   • Emulates Tkinter GUI-style button reliefs (RIDGE, RAISED, SUNKEN).
 
  ✅ Theme:
-      • Dark mode with animated button feedback.
+ 
+   • Dark mode with animated button feedback.
 
 ## 🖼️ Screenshots
 
@@ -34,15 +41,23 @@ A modern, interactive, and powerful Scientific Calculator built with HTML, CSS, 
    − Click on this : https://akash098p.github.io/Scientific_Calculator/
 
 ## 📚 Functions Supported
-   • Arithmetic:  +, -, ×, ÷, %, (, )
+
+   • Arithmetic: 
+   
+   +, -, ×, ÷, %, (, )
 
    • Scientific:
-      sin, cos, tan, sin⁻¹, cos⁻¹, tan⁻¹ (in deg or rad)
-      log, ln
-      x², x³, xⁿ, √, ⁿ√, x⁻¹, !
-      Constants: π, e
+   
+   sin, cos, tan, sin⁻¹, cos⁻¹, tan⁻¹ (in deg or rad)
+      
+   log, ln
+      
+   x², x³, xⁿ, √, ⁿ√, x⁻¹, !
+      
+   Constants: π, e
 
 ## 💡 Tech Used
+
    • HTML5 for structure
 
    • CSS3 for styling and layout
