@@ -30,7 +30,7 @@ A modern, interactive, and powerful Scientific Calculator built with HTML, CSS, 
 
 ## 🖼️ Screenshots
 ![Simple Mode ](simple_mode_cal.png)
-![Scientific Mode ](combined-image(14).png)
+![Scientific Mode ](combined-image (14).png)
 
 ## 🛠️ How to Use
   Open index.html in any modern web browser (Chrome, Firefox, Edge, etc.).
