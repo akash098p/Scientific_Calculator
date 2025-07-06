@@ -29,7 +29,8 @@ A modern, interactive, and powerful Scientific Calculator built with HTML, CSS, 
    • Dark mode with animated button feedback.
 
 ## 🖼️ Screenshots
-
+![Simple Mode ](simple_mode_cal.png)
+![Scientific Mode ](scientific_mode_cal.png)
 
 ## 🛠️ How to Use
   Open index.html in any modern web browser (Chrome, Firefox, Edge, etc.).
