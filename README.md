@@ -29,7 +29,7 @@ A modern, interactive, and powerful Scientific Calculator built with HTML, CSS, 
    • Dark mode with animated button feedback.
 
 ## 🖼️ Screenshots
-![Simple Mode ](simple_mode_cal.png)
+
 ![Scientific Mode ](combined-image(14).png)
 
 ## 🛠️ How to Use
